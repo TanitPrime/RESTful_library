@@ -5,9 +5,7 @@ var DB = require('./books.js');
 const logger = new LogEvent();
 const app = express();
 
-const found = DB.getBook(1);
-console.log(found);
-console.log(DB.books);
+
 
 //time stamp
 let ts = new Date();
@@ -22,8 +20,8 @@ app.get('/api/books',(req,res)=>{
     res.send(DB.books);
 });
 
-app.get('api/books/:id',(req,res)=>{
-    const found = DB.getBook(1);
+app.get('/api/books/:id',(req,res)=>{
+    const found = DB.getBook(req.params.id);
     res.send(found);
 });
 
