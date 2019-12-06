@@ -11,7 +11,7 @@ const app = express();
 let ts = new Date();
 //home end point
 app.get('/',(req,res)=>{
-    logger.log(`entered end point ${req.url}`);
+    logger.log(`${req.hostname} entered Home end point at ${ts}`);
     res.send("we in hoe");
 });
 
